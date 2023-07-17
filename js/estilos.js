@@ -6,7 +6,7 @@ class Estilo {
         this.origen = origen
         this.aroma = aroma
         this.sabor = sabor
-        this.nivelesId = null
+        this.nivelesObjeto = null
     }
     getId() {
         return this.id
@@ -17,7 +17,7 @@ class Estilo {
     mostrarEstilos() {
         return this.id + " - " + this.nombre
     }
-    setNivelesId(niveles) {
-        this.nivelesId = niveles
+    setNivelesObjeto(niveles) {
+        this.nivelesObjeto = niveles
     }
 }

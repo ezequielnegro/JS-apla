@@ -4,12 +4,40 @@ let opcionMenu = true
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    mostrarNiveles(arregloNiveles)
+    mostrarTarjetas(arregloEstilos)
 })
 
 
 
-function mostrarNiveles(arregloNiveles) {
+function mostrarTarjetas(arreglo) {
+    const divNiveles = document.querySelector("#niveles")
+    divNiveles.innerHTML = ""
+    arreglo.forEach((ficha) => {
+        const { id, tipo, nombre, origen, aroma, sabor, nivelesObjeto} = ficha
+        // let niveles =arregloNiveles[nivelesObjeto]
+        console.log(arregloNiveles)
+        let divnivel = document.createElement("div")
+        divnivel.classList.add('card', 'tarjeta-con-niveles')
+        divnivel.id = "niv-" + id
+        divnivel.innerHTML = `<img src="img/logo4.png" class="card-img-top" alt="logo">
+    <div class="card-body">
+        <h5 class="card-title">${nombre}</h5>
+        <p class="card-text">${aroma} ${sabor}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Densidad:</li>
+        <li class="list-group-item">Alcohol:</li>
+        <li class="list-group-item">Ibu:</li>
+        <li class="list-group-item">Color Srm:</li>
+    </ul> `
+    divNiveles.appendChild(divnivel)
+
+})
+}
+
+
+
+/* function mostrarNiveles(arregloNiveles) {
     const divNiveles = document.querySelector("#niveles")
     divNiveles.innerHTML = ""
     if (arregloNiveles.length == 0) {
@@ -34,7 +62,8 @@ function mostrarNiveles(arregloNiveles) {
             <li class="list-group-item">Color Srm: ${colorSrm[0]} - ${colorSrm[1]}</li>
         </ul> `
             divNiveles.appendChild(divnivel)
-        });
+        })
     }
 }
-function sinNiveles() { }
+
+function sinNiveles() { } */

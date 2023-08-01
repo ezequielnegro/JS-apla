@@ -1,6 +1,6 @@
 let arregloEstilos = new Array()
 arregloEstilos.push(new Estilo(arregloEstilos.length + 1, "Lager", "Pilsner", "Republica Checa", "Malta limpia con el perfume especiado de lúpulo Sazz", "Malta dulce pinceladas de caramelo; Lúpulo Sazz"))
-arregloEstilos.push(new Estilo(arregloEstilos.length + 1, "Lager", "Dunkel de Munich", "Munich Alemania", "Maltosidad rica y compleja; sin aroma de lúpulo", "Rico, galleta tostada y maltosidad de caramelo, consobretonos suaves de tosrado"))
+arregloEstilos.push(new Estilo(arregloEstilos.length + 1, "Lager", "Dunkel de Munich", "Munich Alemania", "Maltosidad rica y compleja; sin aroma de lúpulo", "Rico, galleta tostada y maltosidad de caramelo, con sobretonos suaves de tostado"))
 arregloEstilos.push(new Estilo(arregloEstilos.length + 1, "Lager", "Bock", "Sur de Alemania", "Mucho de malta y una pincelada de tostado suaves", "Notas de galleta tostada y malta acaramelada; final suave dulce-amargo con notas de cacao"))
 arregloEstilos.push(new Estilo(arregloEstilos.length + 1, "Lager", "Kolsh", "Colonia Alemania", "Malta y pan, con un toque de lúpulo noble y algo de fruta", "Malta limpia y seca con un fondo de lúpulo"))
 arregloEstilos.push(new Estilo(arregloEstilos.length + 1, "Lager", "Weissbier", "Munich, Alemania", "Afrutado (chicle, platano) y especiado (clavo, pimienta)", "Ligero a grano, con textura de batido de leche; poco lúpulo, aunque estan saliendo versiones más lupuladas; muy carbonatada"))

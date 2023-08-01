@@ -21,7 +21,7 @@ function mostrarNiveles(arregloNiveles) {
             let divnivel = document.createElement("div")
             divnivel.classList.add('card', 'tarjeta-con-niveles')
             divnivel.id = "niv-" + id
-            divnivel.innerHTML = `<img src="/img/logo4.png" class="card-img-top" alt="logo">
+            divnivel.innerHTML = `<img src="img/logo4.png" class="card-img-top" alt="logo">
         <div class="card-body">
             <h5 class="card-title">${nombre}</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the

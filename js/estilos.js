@@ -20,4 +20,6 @@ class Estilo {
     setNivelesObjeto(niveles) {
         this.nivelesObjeto = niveles
     }
+
+    
 }

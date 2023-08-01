@@ -1,4 +1,11 @@
+
+
 let opcionMenu = true
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+
+
 while (opcionMenu != "3" && opcionMenu) {
     opcionMenu = menuEstilos()
 }
@@ -38,3 +45,6 @@ function mostrarNiveles() {
     }
     return niveles
 }
+
+
+})

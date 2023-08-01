@@ -35,11 +35,14 @@ class Niveles {
     getPromedioIbu() {
         return (this.ibu[0] + this.ibu[1]) /2
     }
+    getPromedioAlcohol() {
+        return (this.alcohol[0] + this.alcohol[1]) /2
+    }
     mostrarNombreIbus() {
         return this.nombre + " IBU: " + this.ibu[0] + " - " + this.ibu[1]
     }
     setIbu(min,max) {
-        this.ibuMin=[min,max]
+        this.ibu=[min,max]
         
     }
 }

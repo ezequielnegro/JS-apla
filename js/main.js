@@ -15,7 +15,8 @@ function mostrarTarjetas(arreglo) {
     arreglo.forEach((ficha) => {
         const { id, tipo, nombre, origen, aroma, sabor, nivelesObjeto} = ficha
         // let niveles =arregloNiveles[nivelesObjeto]
-        console.log(arregloNiveles)
+        const niveles = arregloNiveles.find((id)=> id=nivelesObjeto)
+        console.log(niveles)
         let divnivel = document.createElement("div")
         divnivel.classList.add('card', 'tarjeta-con-niveles')
         divnivel.id = "niv-" + id
@@ -25,10 +26,11 @@ function mostrarTarjetas(arreglo) {
         <p class="card-text">${aroma} ${sabor}</p>
     </div>
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">Densidad:</li>
-        <li class="list-group-item">Alcohol:</li>
-        <li class="list-group-item">Ibu:</li>
-        <li class="list-group-item">Color Srm:</li>
+        <li class="list-group-item tipo">${tipo}</li>
+        <li class="list-group-item">Densidad: ${niveles.densidad[0]} - ${niveles.densidad[1]}</li>
+        <li class="list-group-item">Alcohol: ${niveles.alcohol[0]} - ${niveles.alcohol[1]}</li>
+        <li class="list-group-item">Ibu: ${niveles.ibu[0]} - ${niveles.ibu[1]}</li>
+        <li class="list-group-item">Color Srm: ${niveles.colorSrm[0]} - ${niveles.colorSrm[1]}</li>
     </ul> `
     divNiveles.appendChild(divnivel)
 

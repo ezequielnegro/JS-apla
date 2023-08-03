@@ -3,12 +3,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
-    color: rgb(12, 12, 12);
 }
 
 
-
+.contenedor-main{
+    margin-top: 40px;
+}
 
 .tarjeta-con-niveles {
     width: 18rem;
@@ -24,4 +24,8 @@
 
 .tipo {
     font-weight: bold;
+}
+
+.card-img-top{
+    background-color: rgb(12, 12, 12);
 }

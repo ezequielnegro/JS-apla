@@ -1,7 +1,4 @@
 
-
-let opcionMenu = true
-
 document.addEventListener("DOMContentLoaded", () => {
 
     mostrarTarjetas(arregloEstilos)
@@ -14,7 +11,6 @@ function mostrarTarjetas(arreglo) {
     divNiveles.innerHTML = ""
     arreglo.forEach((ficha) => {
         const { id, tipo, nombre, origen, aroma, sabor, nivelesObjeto} = ficha
-        // let niveles =arregloNiveles[nivelesObjeto]
         const niveles = arregloNiveles.find((id)=> id=nivelesObjeto)
         console.log(niveles)
         let divnivel = document.createElement("div")

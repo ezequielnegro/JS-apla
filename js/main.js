@@ -13,16 +13,17 @@ document.querySelector("#buscar").addEventListener("keyup", () => {
 
         busquedaEstilos(ingreso)
     }
-else{
-    mostrarTarjetas(arregloEstilos)
-}
-
-
+    else {
+        mostrarTarjetas(arregloEstilos)
+    }
 
 })
 
 function busquedaEstilos(ingreso) {
-    let arregloBusqueda = arregloEstilos.filter(estilo => estilo.nombre.toLowerCase().includes(ingreso.toLowerCase()))
+    let arregloBusqueda = arregloEstilos.filter(estilo => estilo.nombre.toLowerCase().includes(ingreso.toLowerCase())
+        || estilo.sabor.toLowerCase().includes(ingreso.toLowerCase())
+        || estilo.aroma.toLowerCase().includes(ingreso.toLowerCase())
+        || estilo.origen.toLowerCase().includes(ingreso.toLowerCase()))
     mostrarTarjetas(arregloBusqueda)
 }
 

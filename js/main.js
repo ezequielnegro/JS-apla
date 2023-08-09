@@ -1,7 +1,15 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    if (localStorage.getItem("busqueda")) {
+
+        let almacen = new Array()
+        almacen=JSON.parse(localStorage.getItem("busqueda"))
+        mostrarTarjetas(almacen)
+    }
+    else{
     mostrarTarjetas(arregloEstilos)
+    }
 })
 
 
@@ -13,7 +21,7 @@ document.querySelector("#buscar").addEventListener("keyup", () => {
 
         busquedaEstilos(ingreso)
     }
-    else {
+    else { 
         mostrarTarjetas(arregloEstilos)
     }
 
@@ -24,7 +32,9 @@ function busquedaEstilos(ingreso) {
         || estilo.sabor.toLowerCase().includes(ingreso.toLowerCase())
         || estilo.aroma.toLowerCase().includes(ingreso.toLowerCase())
         || estilo.origen.toLowerCase().includes(ingreso.toLowerCase()))
+    guardarEnStorage(arregloBusqueda)
     mostrarTarjetas(arregloBusqueda)
+    
 }
 
 function mostrarTarjetas(arreglo) {
@@ -54,6 +64,12 @@ function mostrarTarjetas(arreglo) {
     })
 }
 
+function guardarEnStorage(arreglo){
+    let almacen= new Array()
+    almacen=JSON.stringify(arreglo)
+    console.log(almacen)
+    localStorage.setItem("busqueda",almacen)
+}
 
 
 /* function mostrarNiveles(arregloNiveles) {

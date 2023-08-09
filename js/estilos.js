@@ -1,11 +1,12 @@
 class Estilo {
-    constructor(id, tipo, nombre, origen, aroma, sabor) {
+    constructor(id, tipo, nombre, origen, aroma, sabor, img) {
         this.id = id
         this.tipo = tipo
         this.nombre = nombre
         this.origen = origen
         this.aroma = aroma
         this.sabor = sabor
+        this.img = img
         this.nivelesObjeto = null
     }
     getId() {

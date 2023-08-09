@@ -5,18 +5,38 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 
+document.querySelector("#buscar").addEventListener("keyup", () => {
+
+    let ingreso = document.querySelector("#buscar").value
+
+    if (ingreso.length >= 2) {
+
+        busquedaEstilos(ingreso)
+    }
+else{
+    mostrarTarjetas(arregloEstilos)
+}
+
+
+
+})
+
+function busquedaEstilos(ingreso) {
+    let arregloBusqueda = arregloEstilos.filter(estilo => estilo.nombre.toLowerCase().includes(ingreso.toLowerCase()))
+    mostrarTarjetas(arregloBusqueda)
+}
 
 function mostrarTarjetas(arreglo) {
     const divNiveles = document.querySelector("#niveles")
     divNiveles.innerHTML = ""
     arreglo.forEach((ficha) => {
-        const { id, tipo, nombre, origen, aroma, sabor, nivelesObjeto} = ficha
-        const niveles = arregloNiveles.find((id)=> id=nivelesObjeto)
+        const { id, tipo, nombre, origen, aroma, sabor, img, nivelesObjeto } = ficha
+        const niveles = arregloNiveles.find((id) => id = nivelesObjeto)
         console.log(niveles)
         let divnivel = document.createElement("div")
         divnivel.classList.add('card', 'tarjeta-con-niveles')
         divnivel.id = "niv-" + id
-        divnivel.innerHTML = `<img src="img/logo4.png" class="card-img-top" alt="logo">
+        divnivel.innerHTML = `<img src="${img}" class="card-img-top" alt="${origen}">
     <div class="card-body">
         <h5 class="card-title">${nombre}</h5>
         <p class="card-text">${aroma} ${sabor}</p>
@@ -28,9 +48,9 @@ function mostrarTarjetas(arreglo) {
         <li class="list-group-item">Ibu: ${niveles.ibu[0]} - ${niveles.ibu[1]}</li>
         <li class="list-group-item">Color Srm: ${niveles.colorSrm[0]} - ${niveles.colorSrm[1]}</li>
     </ul> `
-    divNiveles.appendChild(divnivel)
+        divNiveles.appendChild(divnivel)
 
-})
+    })
 }
 
 

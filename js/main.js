@@ -1,4 +1,5 @@
 
+
 document.addEventListener("DOMContentLoaded", () => {
 
     if (localStorage.getItem("busqueda")) {
@@ -12,20 +13,29 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 })
 
+document.getElementById("link").addEventListener("click",()=>{mostrarTarjetas(arregloEstilos)})
 
-document.querySelector("#buscar").addEventListener("keyup", () => {
-
-    let ingreso = document.querySelector("#buscar").value
-
-    if (ingreso.length >= 2) {
-
-        busquedaEstilos(ingreso)
-    }
-    else { 
+// document.getElementById("search-clear").addEventListener("click",()=>{mostrarTarjetas(arregloEstilos)})
+document.getElementById("buscar").addEventListener("input", (e) => {
+    let buscar = document.getElementById("buscar").value
+    if (buscar == "") {
         mostrarTarjetas(arregloEstilos)
     }
+    else{
+        document.querySelector("#buscar").addEventListener("keyup", () => {
+            let ingreso = document.querySelector("#buscar").value
+            if (ingreso.length >= 2) {
+                busquedaEstilos(ingreso)
+            }
+            else { 
+                mostrarTarjetas(arregloEstilos)
+            }
+        })
+    }
+  })
 
-})
+
+
 
 function busquedaEstilos(ingreso) {
     let arregloBusqueda = arregloEstilos.filter(estilo => estilo.nombre.toLowerCase().includes(ingreso.toLowerCase())

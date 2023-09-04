@@ -1,4 +1,4 @@
-
+const url ="https://random-data-api.com/api/v2/beers"
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -13,9 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 })
 
+//mostrar colección de estilos
 document.getElementById("link").addEventListener("click",()=>{mostrarTarjetas(arregloEstilos)})
 
-// document.getElementById("search-clear").addEventListener("click",()=>{mostrarTarjetas(arregloEstilos)})
+
 document.getElementById("buscar").addEventListener("input", (e) => {
     let buscar = document.getElementById("buscar").value
     if (buscar == "") {
@@ -34,9 +35,14 @@ document.getElementById("buscar").addEventListener("input", (e) => {
     }
   })
 
+  // boton cerveza random
+  document.getElementById("link-cerveza").addEventListener("click",()=>{mostrarCervezaRandom()})
 
 
 
+
+
+//  funcion para buscar dentro del array de estilos
 function busquedaEstilos(ingreso) {
     let arregloBusqueda = arregloEstilos.filter(estilo => estilo.nombre.toLowerCase().includes(ingreso.toLowerCase())
         || estilo.sabor.toLowerCase().includes(ingreso.toLowerCase())
@@ -44,9 +50,9 @@ function busquedaEstilos(ingreso) {
         || estilo.origen.toLowerCase().includes(ingreso.toLowerCase()))
     guardarEnStorage(arregloBusqueda)
     mostrarTarjetas(arregloBusqueda)
-    
-}
+    }
 
+// funcion para meter el html en el index
 function mostrarTarjetas(arreglo) {
     const divNiveles = document.querySelector("#niveles")
     divNiveles.innerHTML = ""
@@ -81,6 +87,30 @@ function guardarEnStorage(arreglo){
     localStorage.setItem("busqueda",almacen)
 }
 
+
+function mostrarCervezaRandom()
+{
+fetch(url)
+.then((resp)=>resp.json())
+.then((data)=>{
+    const divCerveza = document.querySelector("#cerveza-random")
+    divCerveza.innerHTML = ""
+    let subDivCerveza = document.createElement("div")
+    subDivCerveza.classList.add('card','tarjeta-con-niveles')
+    subDivCerveza.innerHTML = `
+<ul class="list-group list-group-flush">
+        <li class="list-group-item">Marca: ${data.brand}</li>
+        <li class="list-group-item">Nombre: ${data.name}</li>
+        <li class="list-group-item">Estilo: ${data.style}</li>
+        <li class="list-group-item">Densidad:${data.blg}</li>
+        <li class="list-group-item">Alcohol: ${data.alcohol}</li>
+        <li class="list-group-item">${data.ibu}</li>
+    </ul> `
+    divCerveza.appendChild(subDivCerveza)
+
+   
+})
+}
 
 /* function mostrarNiveles(arregloNiveles) {
     const divNiveles = document.querySelector("#niveles")

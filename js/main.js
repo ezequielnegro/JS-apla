@@ -102,7 +102,7 @@ fetch(url)
         <li class="list-group-item">Marca: ${data.brand}</li>
         <li class="list-group-item">Nombre: ${data.name}</li>
         <li class="list-group-item">Estilo: ${data.style}</li>
-        <li class="list-group-item">Densidad:${data.blg}</li>
+        <li class="list-group-item">Densidad: ${data.blg}</li>
         <li class="list-group-item">Alcohol: ${data.alcohol}</li>
         <li class="list-group-item">${data.ibu}</li>
     </ul> `
